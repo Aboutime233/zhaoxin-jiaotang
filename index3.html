@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .theme {
+            display: none;
+            width: 100%;
+            background-color: rgba(255, 255, 255, .7);
+            height: 100px;
+            line-height: 50px;
+            font-size: 20px;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .theme>.imgs>img {
+            width: 40px;
+            height: 40px;
+            border-radius: 5px;
+        }
+        .theme>.imgs>img:hover{
+            cursor: pointer;
+        }
+        .theme>.span1{
+            margin-left: 80px;
+        }
+        .img1{
+            margin-left: 80px;
+        }
+    </style>
+    <link rel="stylesheet" href="./css/css3.css">
+</head>
+
+<body>
+    <button class="tab_theme">更换主题</button>
+    <div class="nav">学习展览区</div>
+    <div class="theme">
+        <div class="imgs">
+            <img class="theme_pink" src="./img/pink1.jpg" alt="">
+            <img  class="img1 theme_black" src="./img/black.jpg" alt="">
+            <img  class="img1 theme_blue" src="./img/blue.jpg" alt="">
+            <img  class="img1 theme_green" src="./img/green.jpg" alt="">
+        </div>
+        <span style="color: pink;">粉红</span>
+        <span class="span1" style="color: black;">黑黑</span>
+        <span class="span1" style="color: rgba(48, 140, 201, .5);">天蓝</span>
+        <span class="span1" style="color: greenyellow;">草绿</span>
+    </div>
+    <!--这里是发布区 面向用户-->
+    <div class="box1">
+        <!--标题-->
+        <div class="box11">
+            标题
+            <input type="text" class="title1">
+        </div>
+        <div class="box12">
+            <div class="span">正文</div>
+            <textarea name="" id="" cols="30" rows="10" class="content1"></textarea>
+        </div>
+        <button class="btn">发送</button>
+        <button class="time_order">按时间排序</button>
+        <!--内容-->
+    </div>
+    <!--这里是评论区板块-->
+    <div class="box4">这里是评论区，快来评论吧！</div>
+    <div class="box5"><input type="text" class="comments"><button class="push">发送</button></div>
+    <div class="box3"></div>
+    <div class="box6">我的学习记录</div>
+    <div class="box2"></div>
+    <!--这里是展览区，展览每一条学习记录,计划用三个板块，第一个板块是标题预览，第三个板块是时间和展开，第二个板块是内容会被隐藏-->
+    <script src="./js/jq,mini - 副本.js"></script>
+    <script src="./js/moment.js"></script>
+    <script>
+        $('.tab_theme').click(function(){
+            if($('.theme').css('display')=='none'){
+                $('.theme').slideDown();
+            }else{
+                $('.theme').slideUp();
+            }
+        })
+        $('.theme_pink').click(function(){
+            $('body').css('background-image',"url('./img/pink1.jpg')");
+            $('.nav').css('background','rgba(221, 116, 180,.7)');
+            $('.tab_theme').css('background','rgba(221, 116, 180,.7)');
+            $('.box1').css('background','rgba(221, 116, 180,.7)').children().css('background','rgba(221, 116, 180,.7)');
+            $('.box4').css('background','rgba(221, 116, 180,.7)');
+            $('.box5').css('background','rgba(221, 116, 180,.7)').children().css('background','rgba(221, 116, 180,.7)');
+            $('.box3').children().css('background','rgba(221, 116, 180,.7)');
+            $('.box6').css('background','rgba(221, 116, 180,.7)').children().css('background','rgba(221, 116, 180,.7)');
+            $('.box2').css('background','rgba(221, 116, 180,.7)').children().css('background','rgba(221, 116, 180,.7)');
+            $('.comments').css('background','white');
+        })
+        $('.theme_blue').click(function(){
+            $('body').css('background-image',"url('./img/blue.jpg')");
+            $('.nav').css('background','rgba(48, 140, 201, .5)');
+            $('.tab_theme').css('background','rgba(48, 140, 201, .5)');
+            $('.box1').css('background','rgba(48, 140, 201, .5)').children().css('background','rgba(48, 140, 201, .5)');
+            $('.box4').css('background','rgba(48, 140, 201, .5)');
+            $('.box5').css('background','rgba(48, 140, 201, .5)').children().css('background','rgba(48, 140, 201, .5)');
+            $('.box3').children().css('background','rgba(48, 140, 201, .5)');
+            $('.box6').css('background','rgba(48, 140, 201, .5)').children().css('background','rgba(48, 140, 201, .5)');
+            $('.box2').css('background','rgba(48, 140, 201, .5)').children().css('background','rgba(48, 140, 201, .5)');
+            $('.comments').css('background','white');
+        })
+        $('.theme_green').click(function(){
+            $('body').css('background-image',"url('./img/green.jpg')");
+            $('.nav').css('background','rgba(15, 236, 37,.5)');
+            $('.tab_theme').css('background','rgba(15, 236, 37,.5)');
+            $('.box1').css('background','rgba(15, 236, 37,.5)').children().css('background','rgba(15, 236, 37,.5)');
+            $('.box4').css('background','rgba(15, 236, 37,.5)');
+            $('.box5').css('background','rgba(15, 236, 37,.5)').children().css('background','rgba(15, 236, 37,.5)');
+            $('.box3').children().css('background','rgba(15, 236, 37,.5)');
+            $('.box6').css('background','rgba(15, 236, 37,.5)').children().css('background','rgba(15, 236, 37,.5)');
+            $('.box2').css('background','rgba(15, 236, 37,.5)').children().css('background','rgba(15, 236, 37,.5)');
+            $('.comments').css('background','white');
+        })
+        $('.theme_black').click(function(){
+            $('body').css('background-image',"url('./img/black.jpg')");
+            $('.nav').css('background','rgba(40, 40, 40,.7)');
+            $('.tab_theme').css('background','rgba(40, 40, 40,.7)');
+            $('.box1').css('background','rgba(40, 40, 40,.7)').children().css('background','rgba(40, 40, 40,.7)');
+            $('.box4').css('background','rgba(40, 40, 40,.7)');
+            $('.box5').css('background','rgba(40, 40, 40,.7)').children().css('background','rgba(40, 40, 40,.7)');
+            $('.box3').children().css('background','rgba(40, 40, 40,.7)');
+            $('.box6').css('background','rgba(40, 40, 40,.7)').children().css('background','rgba(40, 40, 40,.7)');
+            $('.box2').css('background','rgba(40, 40, 40,.7)').children().css('background','rgba(40, 40, 40,.7)');
+            $('.comments').css('background','white');
+        })
+        load();
+        //渲染函数
+        function load() {
+            var data = getData();
+            var data1 = getComment();
+            $('.box2').empty();
+            $('.box3').empty();
+            $.each(data1, function (i, n) {
+                var temp = $('<div class="comment">' + n.uame + ':' + n.comment + '</div>');
+                $('.box3').prepend(temp);
+            });
+            $.each(data, function (i, n) {
+                //console.log(n);
+                var temp = $('<div class="blog-box2" id="' + i + '"><div class="btn1">x</div><div class="blog-box21">' + n.tle + '</div><div class="blog-box22">' + n.cont + '</div><div class="blog-box23">' + n.tim + '</div><div class="btn2">展开</div></div>');
+                $('.box2').prepend(temp);
+            })
+        }
+        //每一次按动按钮时都会触发增加记录，并用对象进行保存
+        $('.btn').click(function () {
+            var title = $('.title1').val();
+            var content = $('.content1').val();
+            var time = new Date();
+            var timeStr = time.getFullYear() + '年' + time.getMonth() + '月' + time.getDate() + '日';
+            $('.title1').val("");
+            $('.content1').val("");
+            obj = {
+                seconds: time,
+                tim: timeStr,
+                tle: title,
+                cont: content
+            }
+            //获取本地数据
+            var local = getData();
+            //追加更新本地数据
+            local.push(obj);
+            saveData(local);
+            //在下面添加blog
+            load();
+        });
+        $('.push').click(function () {
+            var uname = prompt('请输入您的用户名', '');
+            var id = prompt('请输入您的年龄', '');
+            //这里本该有个验证条件的，招新时间紧就跳过了,不要怪罪
+            var comment = $('.comments').val();
+            $('.comments').val("");
+            obj = {
+                uame: uname,
+                id: id,
+                comment: comment
+            }
+            //获取本地数据
+            var local = getComment();
+            //追加更新本地数据
+            local.push(obj);
+            saveComment(local);
+            //在下面添加blog
+            load();
+        })
+        //读取本地存储的数据
+        function getData() {
+            var data = localStorage.getItem('blog');
+            if (data != null) {
+                return JSON.parse(data);
+            } else {
+                return [];
+            }
+        }
+        function getComment() {
+            var data = localStorage.getItem('comment');
+            if (data != null) {
+                return JSON.parse(data);
+            } else {
+                return [];
+            }
+        }
+        function saveData(data) {
+            localStorage.setItem('blog', JSON.stringify(data));
+        }
+        function saveComment(data) {
+            localStorage.setItem('comment', JSON.stringify(data));
+        }
+        $(document).on('click', '.btn1', function () {
+            var data = getData();
+            var index = $(this).parent().attr("id");
+            Delete(index);
+        })
+        /*$('.btn1').click(function(){
+            var data = getData();
+            var index = $(this).parent().attr("id");
+            Delete(index);
+        })*/
+        $(document).on('click', '.btn2', function () {
+            if ($(this).parent().children('.blog-box22').css('display') == 'none') {
+                $(this).parent().children('.blog-box22').css('display', 'block');
+                $(this).html('收缩');
+            } else {
+                $(this).parent().children('.blog-box22').css('display', 'none');
+                $(this).html('展开');
+            }
+        })
+        //删除博客使用自带的i属性
+        function Delete(id) {
+            var data = getData();
+            data.splice(id, 1);
+            saveData(data);
+            load();
+        }
+        $(document).on('click', '.time_order', function () {
+            load();
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/css1.css">
+    <style>
+        .box {
+            position: absolute;
+            left: 40%;
+            top: 100px;
+            width: 20%;
+            height: 300px;
+            background-color: aqua;
+        }
+
+        .imgs1 {
+            width: 100%;
+            height: 100%;
+        }
+
+        .left {
+            position: relative;
+            width: 40px;
+            height: 40px;
+            border-radius: 20px;
+            left: 0;
+            top: -55%;
+        }
+
+        .right {
+            position: relative;
+            width: 40px;
+            height: 40px;
+            border-radius: 20px;
+            left: 72%;
+            top: -55%;
+        }
+
+        .left:hover,
+        .right:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <img src="img/m1.jpg" class="imgs1">
+        <img src="img/m2.jpg" class="imgs1">
+        <img src="img/m3.jpg" class="imgs1">
+        <img src="img/m4.jpg" class="imgs1">
+        <img src="img/m5.jpg" class="imgs1">
+        <img class="left" onclick="changeleft()" src="img/left.png">
+        <img class="right" onclick="changeright()" src="img/right.png">
+    </div>
+    <script src="./js/jq,mini - 副本.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+        $('.imgs1').hide();//隐藏所有图片
+        $('.imgs1').eq(0).show();
+        var count = 0;//代表当前图片
+        autoroll();
+        function changeleft() {
+            count--;
+            if (count == -1) {
+                count = 4;
+            }
+            $('.imgs1').hide();
+            $('.imgs1').eq(count).show();
+        }
+        function changeright() {
+            count++;
+            if (count == 5) {
+                count = 0;
+            }
+            $('.imgs1').hide();
+            $('.imgs1').eq(count).show();
+        }
+        var clockfunc;
+        function autoroll(){
+            clockfunc = setInterval(()=>changeright(),2000);
+        }
+        var box = document.querySelector('.box');
+        box.onmouseenter = function() { 
+				clearInterval(clockfunc);
+			}
+		box.onmouseleave = function() { 
+				autoroll;
+			}
+    </script>
+</body>
+
+</html>
