@@ -1,26 +1,23 @@
 # zhaoxin-jiaotang
-**本地存储：**
+本地存储：
     本地存储为字符串格式
-    `le`t data = [{`
-        `title: 'sh',`
-        `id: 0`
-    `},{`
-        `title: 'hua',`
-        `id:12`
-    `}`
-    ];`
+    let data = [{
+        title: 'sh',
+        id: 0
+    },{
+        title: 'hua',
+        id:12
+    }
+    ];
     先把对象形式转为JSON字符串形式
-    `JS`ON.stringgify(obj)`
-    localStrage.setItem('data1',JSON.stringgify(obj))`
+    JSON.stringgify(obj)
+    localStrage.setItem('data1',JSON.stringgify(obj))
     取出时是要再从字符串格式转换为对象格式
     let data1 = JSON.parse(localStorage.getItem('data1'));
     这里的data1是数组对象，即可取出对应的内容啦
 
-**任务一：**
+任务一：
     轮播图单独完成
-
-**任务二：**
-
 问题1：
 1.时间格式化
 解决方案 ：
@@ -34,3 +31,10 @@
     点击展开即可展示
 4.删除操作
     对应的博客赋给一个固有属性id 用于确定选择或者点中那个博客
+5.剩余操作
+    刚好对应的就是发布博客的操作
+
+提示：
+    自我介绍附有页面
+    Index1 对应的是轮播图
+    index3 对应的是学习记录展示区
