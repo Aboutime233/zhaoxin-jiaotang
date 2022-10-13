@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="./js/jquery.js"></script>
+	<script src="./js/jquery.color.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/dmaku.css" />
+	<style>
+		.header {
+			height: 100px;
+			width: 60%;
+			margin: auto;
+			overflow: hidden;
+		}
+
+		.logo {
+			float: left;
+			margin-top: 45px;
+			width: 200px;
+			height: 50px;
+		}
+
+		.min-nav {
+			border-radius: 5px;
+			padding: 10px;
+			line-height: 69px;
+			text-align: center;
+			list-style: none;
+			float: right;
+			height: 69px;
+		}
+
+		.mid-nav {
+			margin-top: 20px;
+		}
+
+		.min-nav a {
+			font-size: 16px;
+			color: white;
+			text-decoration: none;
+		}
+
+		.body1 {
+			width: 60%;
+			margin: auto;
+			margin-top: 0px;
+
+		}
+
+		.font1 {
+			text-align: center;
+			font-size: 20px;
+			color: white;
+			line-height: 70px;
+		}
+
+		.searcher1,
+		.input12 {
+			display: inline-block;
+			margin-top: 10px;
+		}
+
+		.searcher1 {
+			float: left;
+			height: 70px;
+			width: 20%;
+			background-color: rgba(0, 0, 0, .5);
+			border-radius: 20px;
+		}
+
+		.input1 {
+			overflow: hidden;
+			margin-top: 20px;
+		}
+
+		.input12 {
+			float: right;
+			height: 70px;
+			width: 100%;
+			background-color: rgba(0, 0, 0, .5);
+			border-radius: 20px;
+			border: 0;
+		}
+
+		.input123 {
+			margin-top: 50px;
+		}
+
+		.img1 {
+			width: 18%;
+			margin: 0 40%;
+			margin-top: 30px;
+		}
+
+		.img12 {
+			width: 100%;
+		}
+		.submit1{
+			position: absolute;
+			left: 45%;
+			top: 520px;
+			background-color: rgba(0, 0, 0, .7);
+			height: 70px;
+			width: 10%;
+			border-radius: 20px;
+			border: 0;
+			text-align: center;
+			font-size: 20px;
+			color: white;
+			line-height: 70px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="landscape">
+		<header class="header">
+			<img class="logo" src="./css/logo1.png" alt="">
+			<div class="nav">
+				<ul class="mid-nav">
+					<li class="min-nav"><a href="#">哔哩哔哩</a></li>
+					<li class="min-nav"><a href="#">豆瓣</a></li>
+					<li class="min-nav"><a href="#">微博</a></li>
+					<li class="min-nav"><a href="#">网易云音乐</a></li>
+					<li class="min-nav"><a href="#">首页</a></li>
+				</ul>
+			</div>
+		</header>
+		<div class="img1"><img src="./images/weibologo.png" alt="" class="img12"></div>
+		<div class="body1 font1">
+			<div class="input1">
+				<form action="">
+					<div>
+						<input type="text" class="input12 font1 input124 " value="微博ID">
+					</div>
+					<div class="box1">
+						<input type="text" class="input12 font1 input123" value="博主ID">
+					</div>
+						<input type="submit" value="Submit" class="submit1">
+				</form>
+			</div>
+		</div>
+	</div>
+	<script>
+		$('.input124').click(function () {
+			if (this.value == '微博ID') {
+				this.value = '';
+			}
+		})
+		$('.input123').click(function () {
+			if (this.value == '博主ID') {
+				this.value = '';
+			}
+		})
+		$('.submit1').mouseover(function(){
+			this.style.cursor = 'pointer';
+		})
+	</script>
+	<canvas id="canvas"></canvas>
+	<script type="text/javascript" src="js/dmaku.js"></script>
+</body>
+
+</html>
